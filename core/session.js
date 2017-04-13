@@ -11,7 +11,6 @@ var sessionHandler = {
     },
     //Add keystone token to http requests
     addAuthToken: function(req, res, next) {
-        console.log("Session Id:" + req.session.id);
         // TODO: this is a dummy
         res.append('token', req.session);
         next();
@@ -40,7 +39,6 @@ var sessionHandler = {
         }
 
         req.session.view.count++;
-        console.log("user view counter: " + req.session.view.count);
 
         next();
     },
